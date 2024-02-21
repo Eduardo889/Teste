@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Imagem</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Para evitar scrollbars */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #imagem {
+            position: absolute;
+            top: -100px; /* Posição inicial acima da tela */
+            left: 50%; /* Centralizado horizontalmente */
+            display: none; /* Oculta a imagem inicialmente */
+            animation: cair 1s ease forwards; /* Animação de queda */
+            transform: translateX(-50%); /* Centraliza horizontalmente */
+        }
+
+        @keyframes cair {
+            to {
+                top: 50%; /* Posição final no meio da tela */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="mostrarImagem()">Clique aqui e veja a felicidade</button>
+
+<img id="imagem" src="https://i.ibb.co/nPrvx4W/DTd1s04v-9.jpg" alt="Imagem">
+
+<script>
+    function mostrarImagem() {
+        var imagem = document.getElementById("imagem");
+        imagem.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
